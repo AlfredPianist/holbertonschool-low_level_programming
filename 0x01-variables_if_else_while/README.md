@@ -13,6 +13,6 @@ Welcome. This is the 0x01-variables_if_else_while directory where I'm storing th
  - 8-print_base16.c: prints all digits of base 16 in lowercase.
  - 9-print_comb.c: prints all digits of base 10 starting from 0 separated by a comma and a space.
  - 10-print_comb2.c: prints all numbers from 00 to 99 separated by a comma and a space.
- - 100-print_comb3.c: in progress...
- - 101-print_comb4.c: in progress...
- - 102-print_comb5.c: in progress...
+ - 100-print_comb3.c: prints all combinations of two digits without repeating.
+ - 101-print_comb4.c: prints all combinations of three digits without repeating.
+ - 102-print_comb5.c: prints all combinations of two sets of two digits without repeating.
