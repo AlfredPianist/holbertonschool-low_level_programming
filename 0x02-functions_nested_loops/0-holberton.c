@@ -1,4 +1,4 @@
-#include "./holberton.h"
+#include "holberton.h"
 
 /**
  * main - entry point.
@@ -14,7 +14,7 @@ int main(void)
 
 	i = 0;
 
-	while (i < 11)
+	while (i < 10)
 	{
 		_putchar(holberton[i]);
 		i++;

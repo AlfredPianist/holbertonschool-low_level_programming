@@ -11,8 +11,8 @@ int main(void)
 {
 	long term_1, term_2, next, sum;
 
-	term_1 = term_2 = 1;
-	printf("%ld, %ld, ", term_1, term_2);
+	term_1 = 1;
+	term_2 = 2;
 
 	for (next = term_1 + term_2; next <= 4000000; next = term_1 + term_2)
 	{
@@ -21,12 +21,9 @@ int main(void)
 
 		if (next % 2 == 0)
 			sum += next;
-
-		printf("%ld, ", next);
 	}
 
-	printf("total sum is %ld", sum);
-	printf("\n");
+	printf("%ld\n", sum);
 
 	return (0);
 }
