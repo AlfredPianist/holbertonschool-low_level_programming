@@ -9,10 +9,10 @@
  */
 int main(void)
 {
-	long term_1, term_2, next, sum;
+	int term_1, term_2, next, sum;
 
 	term_1 = 1;
-	term_2 = 2;
+	term_2 = 1;
 
 	for (next = term_1 + term_2; next <= 4000000; next = term_1 + term_2)
 	{
@@ -23,7 +23,7 @@ int main(void)
 			sum += next;
 	}
 
-	printf("%ld\n", sum);
+	printf("%d\n", sum);
 
 	return (0);
 }
