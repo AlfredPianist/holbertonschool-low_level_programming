@@ -18,7 +18,7 @@ Welcome. This is the 0x02-functions_nested_loops directory where I'm storing the
  - 10-add.c: function that returns the sum of two numbers.
  - 11-print_to_98.c: function that prints all numbers from n to 98.
  - 100-times_table.c: function that prints the n times table, only from 0 to 15.
- - 101-natural.c: function that prints the sum of all multiples of 3 and 5 up to 1024.
- - 102-fibonacci.c: function that prints the first 50 numbers of the Fibonacci sequence.
- - 103-fibonacci.c: function that prints the sum of the even Fibonacci numbers sequence up to the number 4000000.
- - 104-fibonacci.c: in progress...
+ - 101-natural.c: prints the sum of all multiples of 3 and 5 up to 1024.
+ - 102-fibonacci.c: prints the first 50 numbers of the Fibonacci sequence.
+ - 103-fibonacci.c: prints the sum of the even Fibonacci numbers sequence up to the number 4000000.
+ - 104-fibonacci.c: prints the first 100 numbeers of the Fibnacci sequence.
