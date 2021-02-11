@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * print_square - prints the character "#" in a squared triangle shape,
+ * print_triangle - prints the character "#" in a squared triangle shape,
  *                followed by a new line.
  * @size: the size of the triangle in lines.
  */

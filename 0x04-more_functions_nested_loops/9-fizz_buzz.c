@@ -21,7 +21,8 @@ int main(void)
 			printf("Fizz");
 		if (number % 5 == 0)
 			printf("Buzz");
-		printf(" ");
+		if (number != 100)
+			printf(" ");
 	}
 	printf("\n");
 
