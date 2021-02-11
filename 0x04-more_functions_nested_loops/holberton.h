@@ -63,10 +63,25 @@ void more_numbers(void);
  */
 void print_line(int n);
 
+/**
+ * print_diagonal - prints the character "\" n times,
+ *                  followed by a new line in a diagonal shape.
+ * @n: the number of times the "\" character will be print.
+ */
 void print_diagonal(int n);
 
+/**
+ * print_square - prints the character "#" in an n * n square,
+ *                followed by a new line.
+ * @size: the size of the square.
+ */
 void print_square(int size);
 
+/**
+ * print_square - prints the character "#" in a squared triangle shape,
+ *                followed by a new line.
+ * @size: the size of the triangle in lines.
+ */
 void print_triangle(int size);
 
 void print_number(int n);
