@@ -14,7 +14,7 @@ Welcome. This is the 0x04-more_functions_nested_loops directory where I'm storin
  - 6-print_line.c: function that prints the character "_" n number of times.
  - 7-print_diagonal.c: function that prints the character "\" in a downward diagonal of n lines.
  - 8-print_square.c: function that prints the character "#" in a square of n * n lines.
- - 9-fizz_buzz.c: function that prints the numbers from 1 to 100 and replaces "Fizz" for numbers multiples of 3, "Buzz" for numbers multiples of 5 and "FizzBuzz" for numbers multiples of 3 and 5.
+ - 9-fizz_buzz.c: prints the numbers from 1 to 100 and replaces "Fizz" for numbers multiples of 3, "Buzz" for numbers multiples of 5 and "FizzBuzz" for numbers multiples of 3 and 5.
  - 10-print_triangle.c: function that prints the character "#" in a squared triangle shape of n lines.
- - 100-prime_factor.c: in progress...
+ - 100-prime_factor.c: prints largest prime factor of 612852475143.
  - 101-print_number.c: function that prints numbers using _putchar function.

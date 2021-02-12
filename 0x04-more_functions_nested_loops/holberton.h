@@ -84,6 +84,10 @@ void print_square(int size);
  */
 void print_triangle(int size);
 
+/**
+ * print_number - prints a number using the _putchar function.
+ * @n: the number to be printed.
+ */
 void print_number(int n);
 
 #endif
