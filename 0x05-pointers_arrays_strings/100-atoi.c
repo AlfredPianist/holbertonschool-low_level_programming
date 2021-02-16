@@ -13,29 +13,32 @@ int _atoi(char *s)
 
 	integer = neg_sign = flag = 0;
 
-	while (flag < 2)
+	if (*s != '\0')
 	{
-		if (*s >= '0' && *s <= '9')
+		while (flag < 2)
 		{
-			if (flag == 0)
-				flag++;
-			integer = (integer * 10) + *s - '0';
-		}
-		else
-		{
-			if (flag == 1)
-				flag++;
+			if (*s >= '0' && *s <= '9')
+			{
+				if (flag == 0)
+					flag = 1;
+				integer = (integer * 10) + *s - '0';
+			}
 			else
 			{
-				if (*s == '-')
-					neg_sign++;
+				if (flag == 1 || *s == '\0')
+					flag = 2;
+				else
+				{
+					if (*s == '-')
+						neg_sign++;
+				}
 			}
+			s++;
 		}
-		s++;
-	}
 
-	if (neg_sign % 2 != 0)
-		integer *= -1;
+		if (neg_sign % 2 != 0)
+			integer *= -1;
+	}
 
 	return (integer);
 }
