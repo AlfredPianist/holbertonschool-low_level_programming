@@ -13,10 +13,9 @@ void print_array(int *a, int n)
 	while (counter < n)
 	{
 		printf("%d", a[counter]);
-		if (counter == n - 1)
-			printf("\n");
-		else
+		if (counter != n - 1)
 			printf(", ");
 		counter++;
 	}
+	printf("\n");
 }
