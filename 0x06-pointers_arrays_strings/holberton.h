@@ -67,12 +67,36 @@ int _strcmp(char *s1, char *s2);
  */
 void reverse_array(int *a, int n);
 
+/**
+ * *string_toupper - converts all lowercase characters to uppercase.
+ * @s: the source string
+ *
+ * Return: a pointer to the string converted.
+ */
 char *string_toupper(char *);
 
+/**
+ * *cap_string - capitalizes all words of a string.
+ * @s: the source string
+ *
+ * Return: a pointer to the string converted.
+ */
 char *cap_string(char *);
 
+/**
+ * leet - converts a string into 1337.
+ * @s: the source string
+ *
+ * Return: a pointer to the string converted.
+ */
 char *leet(char *);
 
+/**
+ * rot13 - converts a string to rot13 cypher.
+ * @s: the source string
+ *
+ * Return: a pointer to the string converted.
+ */
 char *rot13(char *);
 
 /**
