@@ -3,6 +3,7 @@
 /**
  * reverse_string - reverses a string.
  * @s: the string to be reversed.
+ * @length: the length of the string.
  */
 void reverse_string(char *s, int length)
 {
@@ -20,6 +21,8 @@ void reverse_string(char *s, int length)
 /**
  * length_string - returns the length of a string.
  * @s: the string to be calculated.
+ *
+ * Return: the length of the string.
  */
 int length_string(char *s)
 {
