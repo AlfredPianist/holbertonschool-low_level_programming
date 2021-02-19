@@ -16,5 +16,5 @@ Welcome. This is the 0x06-pointers_arrays_strings directory where I'm storing mo
  - 8-rot13.c: Function that converts a string to ro13 cypher.
  - 100-print_number.c: Function that prints numbers using _putchar function.
  - 101-magic.c: Program that changes a value via a pointer. Lesson on how addresses are allocated in RAM.
- - 102-infinite_add.c: in progress...
- - 103-print_buffer.c: in progres...
+ - 102-infinite_add.c: Function that prints infinite amount of numbers.
+ - 103-print_buffer.c: Print a hexdump of a string buffer.
