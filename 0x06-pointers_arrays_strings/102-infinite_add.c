@@ -50,7 +50,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	l_n1 = length_string(n1);
 	l_n2 = length_string(n2);
 
-	for (co = 0; co <= l_n1 || co <= l_n2; co++)
+	for (co = 0; (co <= l_n1 || co <= l_n2)
+		     && (size_r - 1 >= l_n1 && size_r - 1 >= l_n2); co++)
 	{
 		if (co > l_n1)
 			dig1 = '0';
@@ -66,6 +67,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		carry = ((((dig1 + dig2 + carry) - (3 * '0')) / 10) + '0');
 	}
 
+	if (size_r <= l_n1 || size_r <= l_n2)
+		return (0);
 
 	if (carry != '0')
 		r[co] = carry;
