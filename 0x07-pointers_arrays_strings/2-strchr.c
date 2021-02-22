@@ -1,11 +1,9 @@
 #include "holberton.h"
 
 /**
- * *_strncpy - copies a string, printing NUL characters if the size of
- *             destination is large enough, or cropping otherwise.
- * @dest: the destination string.
- * @src: the source string.
- * @n: the size of the destination string.
+ * *_strchr - locates a character in a string.
+ * @s: the source string.
+ * @c: the character to be located in a string.
  *
  * Return: a pointer of the resulting string.
  */

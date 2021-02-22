@@ -1,10 +1,8 @@
 #include "holberton.h"
 
 /**
- * leet - converts a string into 1337.
- * @s: the source string
- *
- * Return: a pointer to the string converted.
+ * print_chessboard - prints a chessboard configuration.
+ * @a: the chessboard matrix.
  */
 void print_chessboard(char (*a)[8])
 {

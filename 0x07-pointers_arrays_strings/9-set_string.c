@@ -1,10 +1,9 @@
 #include "holberton.h"
 
 /**
- * rot13 - converts a string to rot13 cypher.
- * @s: the source string
- *
- * Return: a pointer to the string converted.
+ * set_string - sets the value of a pointer to a char.
+ * @s: the source pointer.
+ * @to: the destination string.
  */
 void set_string(char **s, char *to)
 {

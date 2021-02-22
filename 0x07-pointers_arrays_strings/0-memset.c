@@ -1,10 +1,10 @@
 #include "holberton.h"
 
 /**
- * *_memset - concatenates two strings overwriting the NUL character
- *            from the first string.
- * @dest: the destination string.
- * @src: the source string.
+ * *_memset - fills memory with a constant byte set by n.
+ * @s: the destination string.
+ * @b: constant byte to be set.
+ * @n: nuimber of bytes.
  *
  * Return: a pointer of the resulting string.
  */

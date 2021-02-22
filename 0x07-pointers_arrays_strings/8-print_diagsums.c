@@ -1,10 +1,9 @@
 #include "holberton.h"
 
 /**
- * rot13 - converts a string to rot13 cypher.
- * @s: the source string
- *
- * Return: a pointer to the string converted.
+ * print_diagsums - prints the sum of the diagonals of a n * n matrix.
+ * @a: the source matrix to be operated.
+ * @size: the size of the matrix.
  */
 void print_diagsums(int *a, int size)
 {
