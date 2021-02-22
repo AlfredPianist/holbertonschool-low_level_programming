@@ -10,32 +10,20 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	unsigned int index_s, index_a, pbreak, len_str;
+	unsigned int index_s, index_a;
+	char *res = NULL;
 
-	pbreak = len_str = 0;
-
-	for (index_s = 0; s[index_s] != '\0'; index_s++)
-		pbreak++;
-	len_str = pbreak;
-
-	if (len_str == 0)
-		return (NULL);
-
-	for (index_a = 0; accept[index_a] != '\0'; index_a++)
+	for (index_s = 0; s[index_s] != '\0' && res == NULL; index_s++)
 	{
-		for (index_s = 0; s[index_s] != '\0'; index_s++)
+		for (index_a = 0; accept[index_a] != '\0'; index_a++)
 		{
-			printf("pbreak %d\n", pbreak);
-			if (s[index_s] == accept[index_a] && index_s < pbreak)
+			if (s[index_s] == accept[index_a])
 			{
-				pbreak = index_s;
+				res = s + index_s;
 				break;
 			}
 		}
 	}
 
-	if (pbreak == len_str)
-		return (NULL);
-
-	return (s + pbreak);
+	return (res);
 }
