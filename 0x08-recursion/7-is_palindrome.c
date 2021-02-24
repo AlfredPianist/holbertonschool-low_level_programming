@@ -14,12 +14,13 @@ int _strlen(char *s)
 }
 
 /**
- * _prime - helper function for is_prime_number. Keeps n as part of the
- *          funtion.
- * @n: the number to be found its prime quality.
- * @temp: a temporal divisor. If n % temp == 0, then n is not prime.
+ * _palindrome - helper function to verify if a string is palindromic
+ *               or not.
+ * @s: the string to be operated upon.
+ * @len: the length of the string.
+ * @stop: the half of the string.
  *
- * Return: 1 of prime, 0 otherwise.
+ * Return: 1 if palindrome, 0 otherwise.
  */
 int _palindrome(char *s, int len, int stop)
 {
