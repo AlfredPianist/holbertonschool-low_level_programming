@@ -19,6 +19,10 @@ int _putchar(char c);
  */
 void _puts_recursion(char *s);
 
+/**
+ * _print_rev_recursion - prints a string recursively backwards.
+ * @s: the string to be print.
+ */
 void _print_rev_recursion(char *s);
 
 /**
@@ -44,7 +48,12 @@ int factorial(int n);
  */
 int _pow_recursion(int x, int y);
 
-
+/**
+ * _sqrt_recursion - returns the natural square root of a number recursively.
+ * @n: the number whose square root must be found.
+ *
+ * Return: The helper function _sqrt(n, 0).
+ */
 int _sqrt_recursion(int n);
 
 /**
