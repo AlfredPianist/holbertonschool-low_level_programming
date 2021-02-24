@@ -65,6 +65,12 @@ int _sqrt_recursion(int n);
  */
 int is_prime_number(int n);
 
+/**
+ * is_palindrome - returns if a string is palindromic.
+ * @s: the string to be operated.
+ *
+ * Return: the helper function _prime(n, 5)
+ */
 int is_palindrome(char *s);
 
 int wildcmp(char *s1, char *s2);
