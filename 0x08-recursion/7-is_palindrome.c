@@ -25,7 +25,7 @@ int _palindrome(char *s, int len, int stop)
 {
 	if (*s != *(s + len))
 		return (0);
-	if (len <= stop)
+	if (len >= stop)
 		return (_palindrome(s + 1, len - 2, stop));
 	return (1);
 }
