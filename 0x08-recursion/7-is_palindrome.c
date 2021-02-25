@@ -40,10 +40,17 @@ int _palindrome(char *s, int len, int stop)
 int is_palindrome(char *s)
 {
 	int len;
+	int stop;
 
 	len = _strlen(s);
 
-	if (len == 0 || len == 1)
+	if (len % 2 == 0)
+		stop = (len / 2) - 1;
+	else
+		stop = len / 2;
+
+	if (len == 0)
 		return (1);
-	return (_palindrome(s, len - 1, len / 2));
+
+	return (_palindrome(s, len - 1, stop));
 }
