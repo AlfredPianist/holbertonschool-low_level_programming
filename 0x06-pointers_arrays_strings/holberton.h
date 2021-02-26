@@ -105,8 +105,22 @@ char *rot13(char *);
  */
 void print_number(int n);
 
+/**
+ * *infinite_add - adds two really large numbers.
+ * @n1: the first summand string of integers.
+ * @n2: the second summand string of integers.
+ * @r: the buffer that the function will use to store the result.
+ * @size_r: the size of the buffer.
+ *
+ * Return: a pointer to the buffer with the result.
+ */
 char *infinite_add(char *n1, char *n2, char *r, int size_r);
 
+/**
+ * print_buffer - prints a hexdump of a string.
+ * @b: the string to be printed.
+ * @size: the size of the buffer.
+ */
 void print_buffer(char *b, int size);
 
 #endif

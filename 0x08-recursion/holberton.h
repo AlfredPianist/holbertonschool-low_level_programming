@@ -73,6 +73,13 @@ int is_prime_number(int n);
  */
 int is_palindrome(char *s);
 
+/**
+ * wildcmp - compares two strings. The second one may have the * wildcard.
+ * @s1: the source string.
+ * @s2: the string to be compared to.
+ *
+ * Return: 1 if two strings are equal even with *, 0 otherwise.
+ */
 int wildcmp(char *s1, char *s2);
 
 #endif

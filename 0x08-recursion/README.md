@@ -13,4 +13,4 @@ Welcome. This is the 0x08-recursion directory where I'm storing exercises showin
  - 5-sqrt_recursion.c: Function that prints the square root of a number recursively.
  - 6-is_prime_number.c: Function that prints whether a number is prime or not. 
  - 7-is_palindrome.c: Function that prints whether a string is palindromic or not.
- - 100-wildcmp.c: in progress...
+ - 100-wildcmp.c: Function that compares two strings, the second one with wildcards.
