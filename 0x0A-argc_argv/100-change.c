@@ -25,21 +25,17 @@ int main(int argc, char *argv[])
 
 	remainder = atoi(argv[1]);
 	if (remainder <= 0)
-		printf("0\n");
-	else
 	{
-		while (remainder != 0)
-		{
-			if (remainder / coins[index] > 0)
-			{
-				cents += (remainder / coins[index]);
-				remainder -= (remainder / coins[index]) * coins[index];
-			}
-			else
-				index++;
-		}
-		printf("%d", cents);
+		printf("0\n");
+		return (0);
 	}
 
+	while (remainder > 0 && index < 5)
+	{
+		cents += remainder / coins[index];
+		remainder = remainder % coins[index];
+		index++;
+	}
+	printf("%d\n", cents);
 	return (0);
 }
