@@ -13,7 +13,6 @@ char *_strdup(char *str)
 	char *cpy;
 
 	len = counter = 0;
-	cpy = NULL;
 
 	if (str == NULL)
 		return (NULL);
@@ -22,7 +21,11 @@ char *_strdup(char *str)
 		;
 
 	cpy = malloc(sizeof(char) * len + 1);
-	for (counter = 0; counter < len; counter++)
+
+	if (cpy == NULL || len == 0)
+		return (NULL);
+
+	for (counter = 0; counter <= len; counter++)
 		cpy[counter] = str[counter];
 
 	return (cpy);
