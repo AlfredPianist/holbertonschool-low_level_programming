@@ -120,9 +120,13 @@ char **strtow(char *str)
 
 	/* Array with lengths of each word */
 	word_char_ar = arraylengths(str, words_total + 1);
+	if (word_char_ar == NULL)
+		return (NULL);
 
 	/* Allocate memory for the array of words */
 	words = arrayalloc(word_char_ar, words_total + 1);
+	if (words == NULL)
+		return (NULL);
 
 	/* Populate array with each word */
 	for (counter_str = 0; str[counter_str] != '\0'; counter_str++)
@@ -138,6 +142,5 @@ char **strtow(char *str)
 		}
 	}
 	words[counter] = '\0';
-
 	return (words);
 }
