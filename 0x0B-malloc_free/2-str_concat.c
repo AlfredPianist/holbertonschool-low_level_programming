@@ -22,7 +22,7 @@ char *str_concat(char *s1, char *s2)
 			;
 	}
 	else
-		*s1 = '\0';
+		s1 = "";
 
 	if (s2 != NULL)
 	{
@@ -30,7 +30,7 @@ char *str_concat(char *s1, char *s2)
 			;
 	}
 	else
-		*s2 = '\0';
+		s2 = "";
 
 	cat = malloc(sizeof(char) * (len_s1 + len_s2) + 1);
 
