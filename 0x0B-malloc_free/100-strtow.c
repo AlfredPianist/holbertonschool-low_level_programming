@@ -29,7 +29,7 @@ int wordstotal(char *str)
  */
 char *allocword(char *str, int len)
 {
-	str = malloc(sizeof(char) * (len + 1));
+	str = malloc(sizeof(char) * len);
 	if (str == NULL)
 	{
 		free(str);
@@ -53,10 +53,10 @@ void copychars(char *str, char *cpy, int begin, int len)
 	for (counter = 0; counter < len - 1; counter++)
 	{
 		cpy[counter] = str[begin + counter];
-		printf("char #%d = %c\n", counter, cpy[counter]);
+		/* printf("char #%d = %c\n", counter, cpy[counter]); */
 	}
 	cpy[counter] = '\0';
-	printf("char #%d = %c\n", counter, cpy[counter]);
+	/* printf("char #%d = %c\n", counter, cpy[counter]); */
 }
 
 /**
@@ -106,6 +106,6 @@ char **strtow(char *str)
 		counter_str++;
 		flag = 0;
 	}
-	words[counter] = 0;
+	words[counter] = '\0';
 	return (words);
 }
