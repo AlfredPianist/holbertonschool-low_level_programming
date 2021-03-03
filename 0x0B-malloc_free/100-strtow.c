@@ -20,78 +20,43 @@ int wordstotal(char *str)
 }
 
 /**
- * arraylengths - creates a dynamic array of lengths of each word
- *                depending on the total of words.
- * @str: The string to be calculated.
- * @words_total: The total amount of words.
- *
- * Return: The pointer to the array of word lengths or NULL if failed to
- *         allocate memory.
- */
-int *arraylengths(char *str, int words_total)
-{
-	int counter_str, counter, len;
-	int *word_char_count;
-
-	counter_str = counter = len = 0;
-
-	word_char_count = malloc(sizeof(int) * words_total);
-
-	if (word_char_count == NULL)
-		return (NULL);
-
-	for (counter_str = 0; str[counter_str] != '\0'; counter_str++)
-	{
-		if (str[counter_str] != ' ')
-		{
-			len++;
-			if (str[counter_str + 1] == ' ' || str[counter_str + 1] == '\0')
-			{
-				word_char_count[counter] = len + 1;
-				counter++;
-				len = 0;
-			}
-		}
-	}
-
-	word_char_count[counter] = '\0';
-
-	return (word_char_count);
-}
-
-/**
- * arrayalloc - allocates memory for the resulting array of words..
- * @word_char_ar: The array of lengths of each word.
- * @words_total: The total amount of words to be allocated.
+ * allocword - allocates memory for the specific word.
+ * @str: The array of the word.
+ * @len: The length of the word.
  *
  * Return: The pointer to the resulting array or NULL if failed to
  *         allocate memory.
  */
-char **arrayalloc(int *word_char_ar, int words_total)
+char *allocword(char *str, int len)
 {
-	int counter_str;
-	char **words;
-
-	counter_str = 0;
-	words = malloc(sizeof(char *) * words_total);
-
-	if (words == NULL)
-		return (NULL);
-
-	for (counter_str = 0; counter_str < words_total; counter_str++)
+	str = malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
 	{
-		words[counter_str] = malloc(sizeof(char) * word_char_ar[counter_str]);
-
-		if (words[counter_str] == NULL)
-		{
-			for (counter_str -= 1; counter_str >= 0; counter_str--)
-				free(words[counter_str]);
-			free(words);
-			return (NULL);
-		}
+		free(str);
+		return (NULL);
 	}
+	return (str);
+}
 
-	return (words);
+/**
+ * copychars - copies the characters from a word to another array.
+ * @str: The source word.
+ * @cpy: The destination array.
+ * @begin: The beginning position of str.
+ * @len: The length of the word.
+ */
+void copychars(char *str, char *cpy, int begin, int len)
+{
+	int counter;
+
+	counter = 0;
+	for (counter = 0; counter < len - 1; counter++)
+	{
+		cpy[counter] = str[begin + counter];
+		printf("char #%d = %c\n", counter, cpy[counter]);
+	}
+	cpy[counter] = '\0';
+	printf("char #%d = %c\n", counter, cpy[counter]);
 }
 
 /**
@@ -103,44 +68,44 @@ char **arrayalloc(int *word_char_ar, int words_total)
  */
 char **strtow(char *str)
 {
-	int words_total, len, counter_str, counter;
-	int *word_char_ar;
+	int words_total, counter_str, counter, word_char, flag, counter_2;
 	char **words;
 
-	words_total = len = counter_str = counter = 0;
+	words_total = counter_str = counter = word_char = flag = counter_2 = 0;
 	words = NULL;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
 
-	/* Count the number of words on the string */
 	words_total = wordstotal(str);
 	if (words_total == 0)
 		return (NULL);
 
-	/* Array with lengths of each word */
-	word_char_ar = arraylengths(str, words_total + 1);
-	if (word_char_ar == NULL)
-		return (NULL);
-
-	/* Allocate memory for the array of words */
-	words = arrayalloc(word_char_ar, words_total + 1);
+	words = malloc(sizeof(char *) * (words_total + 1));
 	if (words == NULL)
 		return (NULL);
 
-	/* Populate array with each word */
-	for (counter_str = 0; str[counter_str] != '\0'; counter_str++)
+	for (counter = 0; counter < words_total; counter++)
 	{
-		if (str[counter_str] != ' ')
-		{
-			words[counter][len++] = str[counter_str];
-			if (str[counter_str + 1] == ' ' || str[counter_str + 1] == '\0')
+		for (word_char = 0; str[counter_str] != '\0' && flag == 0; counter_str++)
+			if (str[counter_str] != ' ')
 			{
-				words[counter++][len] = '\0';
-				len = 0;
+				word_char++;
+				if (str[counter_str + 1] == ' ' || str[counter_str + 1] == '\0')
+					flag = 1;
 			}
+
+		words[counter] = allocword(words[counter], word_char + 1);
+		if (words[counter] == NULL)
+		{
+			free(words);
+			return (NULL);
 		}
+
+		copychars(str, words[counter], counter_str - word_char, word_char + 1);
+		counter_str++;
+		flag = 0;
 	}
-	words[counter] = '\0';
+	words[counter] = 0;
 	return (words);
 }
