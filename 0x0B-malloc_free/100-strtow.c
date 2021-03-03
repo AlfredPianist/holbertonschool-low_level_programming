@@ -51,12 +51,8 @@ void copychars(char *str, char *cpy, int begin, int len)
 
 	counter = 0;
 	for (counter = 0; counter < len - 1; counter++)
-	{
 		cpy[counter] = str[begin + counter];
-		/* printf("char #%d = %c\n", counter, cpy[counter]); */
-	}
 	cpy[counter] = '\0';
-	/* printf("char #%d = %c\n", counter, cpy[counter]); */
 }
 
 /**
