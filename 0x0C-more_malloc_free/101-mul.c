@@ -75,7 +75,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 /**
  * multiply - multiplies two numbers and prints its product.
- * @prod: The array in which it will be stored the result.
+ * @p_prod: The array in which it will be stored the result.
  * @n1: The first number.
  * @n2: The second number.
  * @len_n1: The total number of digits of the first number.
@@ -115,7 +115,9 @@ void multiply(char *p_prod, char *n1, char *n2, int *len_n1, int *len_n2)
 }
 
 /**
- * main - check the code for Holberton School students.
+ * main - main program for multiplying 2 numbers.
+ * @argc: The argument count.
+ * @argv: The argument vector.
  *
  * Return: Always 0.
  */
