@@ -8,5 +8,5 @@ Welcome. This is the 0x0C-more_malloc_free directory where I'm storing more exer
  - 1-string_nconcat.c: Function that concatenates the first string with the first `n` bytes of the second string.
  - 2-calloc.c: Function that allocates memory and initializes with zeroes.
  - 3-array_range.c: Function that creates an array of integers from `min` to `max`.
- - 100-realloc.c: in progress...
- - 101-mul.c: in progress...
+ - 100-realloc.c: Function that reallocates memory depending on the new size.
+ - 101-mul.c: Program that multiplies two numbers.
