@@ -42,8 +42,11 @@ int main(int argc, char *argv[])
 	 */
 	num_bytes = atoi(argv[1]);
 	for (counter = 0; counter < num_bytes; counter++)
-		printf("%.2x ", *(((unsigned char *) p_address) + counter));
-
+	{
+		printf("%02x", *((unsigned char *)(p_address + counter)));
+		if (counter != num_bytes - 1)
+			printf(" ");
+	}
 	printf("\n");
 
 	return (0);
