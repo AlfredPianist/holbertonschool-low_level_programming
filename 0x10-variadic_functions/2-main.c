@@ -7,7 +7,6 @@
  */
 int main(void)
 {
-	print_all("ceis", 'H', 0, "lberton");
+	print_strings(" @ ", 4, "Jay", "Django", NULL, "hello");
 	return (0);
 }
-

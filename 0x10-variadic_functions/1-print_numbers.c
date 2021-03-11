@@ -1,5 +1,10 @@
 #include "variadic_functions.h"
 
+/**
+ * print_numbers - print a variable number of numbers.
+ * @separator: The separator to be used for printing the numbers.
+ * @n: The total numbers to be printed.
+ */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	unsigned int counter;
@@ -15,11 +20,9 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			num = va_arg(nums, int);
 			if (counter != n - 1)
 				printf("%d%s", num, separator);
-			else
-				printf("%d\n", num);
 			counter++;
 		}
 		va_end(nums);
 	}
-
+	printf("%d\n", num);
 }

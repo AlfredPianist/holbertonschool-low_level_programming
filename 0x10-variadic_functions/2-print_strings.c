@@ -26,11 +26,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 
 			if (counter != n - 1)
 				printf("%s", separator);
-			else
-				printf("\n");
 			counter++;
 		}
 		va_end(strs);
 	}
-
+	printf("\n");
 }
