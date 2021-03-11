@@ -6,7 +6,8 @@
  * @argc: The argument count.
  * @argv: The argument vector.
  *
- * Return: Always 0 (success).
+ * Return: 0 if success, otherwise 1 if there are more than two arguments,
+ *         or 2 if the number of bytes is negative.
  */
 int main(int argc, char *argv[])
 {
@@ -37,16 +38,13 @@ int main(int argc, char *argv[])
 
 	/*
 	 * Because a function pointer points to actual instructions,
-	 * iterates through each byte from the pointer's address and casts it
+	 * iterate through each byte from the pointer's address and cast it
 	 * to be an unsigned char * value for it to be printed then as hex (2 bytes).
 	 */
 	num_bytes = atoi(argv[1]);
 	for (counter = 0; counter < num_bytes; counter++)
-	{
-		printf("%02x", *((unsigned char *)(p_address + counter)));
-		if (counter != num_bytes - 1)
-			printf(" ");
-	}
+		printf("%02x ", *((unsigned char *)(p_address + counter)));
+
 	printf("\n");
 
 	return (0);

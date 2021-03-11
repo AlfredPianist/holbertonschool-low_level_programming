@@ -6,7 +6,10 @@
  * @argc: The argument count.
  * @argv: The argument vector.
  *
- * Return: Always 0 (success).
+ * Return: 0 if success, otherwise
+ *         98 if incorrect number of arguments,
+ *         99 if operand non existent, and
+ *         100 if division by zero.
  */
 int main(int argc, char *argv[])
 {
