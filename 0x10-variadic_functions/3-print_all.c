@@ -6,16 +6,16 @@
  */
 void print_all(const char * const format, ...)
 {
-	char *s, c;
+	va_list args;
 	unsigned int counter;
+	char *s, c;
 	int i;
 	float f;
-	va_list args;
 
 	counter = 0;
 
 	va_start(args, format);
-	while (format[counter] != '\0')
+	while (format != NULL && format[counter] != '\0')
 	{
 		switch (format[counter++])
 		{
@@ -25,7 +25,7 @@ void print_all(const char * const format, ...)
 			break;
 		case 'i':
 			i = va_arg(args, int);
-			printf("%i", i);
+			printf("%d", i);
 			break;
 		case 'f':
 			f = (float) va_arg(args, double);
@@ -34,9 +34,8 @@ void print_all(const char * const format, ...)
 		case 's':
 			s = va_arg(args, char *);
 			if (s == NULL)
-				printf("(nil)");
-			else
-				printf("%s", s);
+				s = "(nil)";
+			printf("%s", s);
 			break;
 		default:
 			continue;
@@ -44,6 +43,6 @@ void print_all(const char * const format, ...)
 		if (format[counter] != '\0')
 			printf(", ");
 	}
-	printf("\n");
 	va_end(args);
+	printf("\n");
 }
