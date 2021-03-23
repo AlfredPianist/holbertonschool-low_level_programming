@@ -92,6 +92,9 @@ size_t print_listint_safe(const listint_t *head)
 	list_size = flag = 0;
 	head_add = NULL;
 
+	if (head == NULL)
+		return (0);
+
 	while (head != NULL && flag == 0)
 	{
 		add_node_endadd(&head_add, (void *) head);
