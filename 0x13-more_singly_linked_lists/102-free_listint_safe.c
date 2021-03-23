@@ -9,26 +9,30 @@
  */
 size_t free_listint_safe(listint_t **h)
 {
+	listint_t *next_node;
+	listadd_t *head_add;
 	size_t list_size;
-	listint_t *current_node, *next_node;
 	short flag;
 
 	list_size = flag = 0;
+	head_add = NULL;
+
 	if (*h == NULL)
 		return (0);
 
-	next_node = NULL;
-	current_node = *h;
-	while (current_node != NULL && flag == 0)
+	next_node = (*h)->next;
+	while (*h != NULL && flag == 0)
 	{
-		next_node = current_node->next;
-		if (current_node <= next_node)
+		add_node_endadd(&head_add, (void *) *h);
+		if (find_nodeadd(&head_add, (void *) (*h)->next) == 1)
 			flag = 1;
-		free(current_node);
+		next_node = (*h)->next;
+		free(*h);
+		*h = next_node;
 		list_size++;
-		current_node = next_node;
 	}
 	*h = NULL;
 
+	free_listadd(&head_add);
 	return (list_size);
 }
