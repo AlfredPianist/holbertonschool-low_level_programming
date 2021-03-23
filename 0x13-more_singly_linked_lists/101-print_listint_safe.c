@@ -101,7 +101,7 @@ size_t print_listint_safe(const listint_t *head)
 		printf("[%p] %d\n", (void *) head, head->n);
 		if (find_nodeadd(&head_add, (void *) head->next) == 1)
 		{
-			printf("-> [%p] %d\n", (void *) head, head->next->n);
+			printf("-> [%p] %d\n", (void *) head->next, head->next->n);
 			flag = 1;
 		}
 		head = head->next;
