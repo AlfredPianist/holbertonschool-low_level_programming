@@ -11,4 +11,4 @@ Welcome. This is the 0x14-bit_manipulation directory where I'm storing exercises
  - 4-clear_bit.c: Function that clears a bit of a number's representation in binary given an index.
  - 5-flip_bits.c: Function that counts how many bits are needed to be flipped to convert a number to another. 
  - 100-get_endianness.c: Function that checks the endianness of the computer.
- - 101-password:
+ - 101-password: The password for crackme3.
