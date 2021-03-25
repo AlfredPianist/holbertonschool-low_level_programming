@@ -10,5 +10,5 @@ Welcome. This is the 0x14-bit_manipulation directory where I'm storing exercises
  - 3-set_bit.c: Function that sets a bit to 1 of a number's representation in binary given an index.
  - 4-clear_bit.c: Function that clears a bit of a number's representation in binary given an index.
  - 5-flip_bits.c: Function that counts how many bits are needed to be flipped to convert a number to another. 
- - 100-get_endianness.c:
+ - 100-get_endianness.c: Function that checks the endianness of the computer.
  - 101-password:
