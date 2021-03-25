@@ -4,7 +4,8 @@
  * binary_to_uint - Converts a binary number to an unsigned integer
  * @b: The binary number to be converted.
  *
- * Return: The binary number converted to its decimal representation.
+ * Return: The binary number converted to its decimal representation, or 0
+ *         if unsuccessful.
  */
 unsigned int binary_to_uint(const char *b)
 {
@@ -26,6 +27,11 @@ unsigned int binary_to_uint(const char *b)
 
 	while (counter >= 0)
 	{
+		/*
+		 * Remember that the shifting means that bit shifted left by the factor
+		 * represents 2**factor, so that summed to whatever I have already stored
+		 * is indeed the representation of the number in decimal.
+		 */
 		if (b[counter--] == '1')
 			number += 1 << factor;
 		factor++;
