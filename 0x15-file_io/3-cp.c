@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest), exit(99);
 
 	if (orig_read_buf == -1)
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", orig), exit(98);
 	if (close(f_des_org) == -1)
 		dprintf(STDERR_FILENO, "Error: Can't close %d\n", f_des_org), exit(100);
 	if (close(f_des_des) == -1)
