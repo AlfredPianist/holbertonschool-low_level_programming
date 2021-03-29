@@ -1,6 +1,8 @@
 #ifndef HOLBERTON
 #define HOLBERTON
 
+#define BUFFER 1024
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
