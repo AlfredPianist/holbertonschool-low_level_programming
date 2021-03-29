@@ -20,24 +20,25 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 
 	orig = argv[1], dest = argv[2];
-	f_des_org = open(orig, O_RDONLY);
-	f_des_des = open(dest, O_WRONLY | O_TRUNC | O_CREAT,
-			 S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 
+	f_des_org = open(orig, O_RDONLY);
 	if (f_des_org == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", orig), exit(98);
 
+	f_des_des = open(dest, O_WRONLY | O_TRUNC | O_CREAT,
+			 S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+
 	while ((orig_read_buf = read(f_des_org, buffer, BUFFER)) > 0)
-		if (orig_read_buf != write(f_des_des, buffer, orig_read_buf) ||
-		    f_des_des == -1)
+		if (f_des_des == -1 ||
+		    orig_read_buf != write(f_des_des, buffer, orig_read_buf))
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest), exit(99);
 
 	if (orig_read_buf == -1)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", orig), exit(98);
 	if (close(f_des_org) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close %d\n", f_des_org), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_des_org), exit(100);
 	if (close(f_des_des) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close %d\n", f_des_des), exit(100);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", f_des_des), exit(100);
 
 	return (0);
 }
