@@ -45,7 +45,7 @@ void get_class(unsigned char *e_ident)
 	switch (e_ident[EI_CLASS])
 	{
 	case ELFCLASSNONE:
-		printf("This class is invalid");
+		printf("none");
 		break;
 	case ELFCLASS32:
 		printf("ELF32");
@@ -76,7 +76,7 @@ short get_data(unsigned char *e_ident)
 	switch (e_ident[EI_DATA])
 	{
 	case ELFDATANONE:
-		printf("Unknown data format");
+		printf("none");
 		data = 0;
 		break;
 	case ELFDATA2LSB:
@@ -129,14 +129,11 @@ void get_osabi(unsigned char *e_ident)
 	case ELFOSABI_NETBSD:
 		printf("UNIX - NetBSD");
 		break;
-	case ELFOSABI_GNU:
-		printf("UNIX - GNU");
+	case ELFOSABI_LINUX:
+		printf("UNIX - Linux");
 		break;
 	case ELFOSABI_SOLARIS:
 		printf("UNIX - Solaris");
-		break;
-	case ELFOSABI_AIX:
-		printf("UNIX - AIX");
 		break;
 	case ELFOSABI_IRIX:
 		printf("UNIX - IRIX");
@@ -144,15 +141,20 @@ void get_osabi(unsigned char *e_ident)
 	case ELFOSABI_FREEBSD:
 		printf("UNIX - FreeBSD");
 		break;
+	case ELFOSABI_TRU64:
+		printf("UNIX - TRU64");
+		break;
 	case ELFOSABI_OPENBSD:
 		printf("UNIX - OpenBSD");
+		break;
+	case ELFOSABI_ARM:
+		printf("ARM");
 		break;
 	case ELFOSABI_STANDALONE:
 		printf("Standalone App");
 		break;
 	default:
-		printf("<unknown: %x>\n", e_ident[EI_OSABI]);
-		break;
+		printf("<unknown: %x>", e_ident[EI_OSABI]);
 	}
 	printf("\n");
 }
@@ -175,7 +177,7 @@ void get_type(short data, uint16_t e_type)
 	switch (type)
 	{
 	case ET_NONE:
-		printf("NONE (Unknown type)");
+		printf("NONE (None)");
 		break;
 	case ET_REL:
 		printf("REL (Relocatable file)");
@@ -190,7 +192,7 @@ void get_type(short data, uint16_t e_type)
 		printf("CORE (Core file)");
 		break;
 	default:
-		printf("<unknown: %x>", e_type);
+		printf("<unknown:> %x", e_type);
 		break;
 	}
 	printf("\n");
