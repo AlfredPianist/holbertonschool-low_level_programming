@@ -158,8 +158,8 @@ void get_osabi(unsigned char *e_ident)
 }
 
 /**
- * get_version - Prints the file type of the file.
- * @e_ident: The array of bytes passing as the identifier of the file.
+ * get_type - Prints the file type of the file.
+ * @e_type: The object file type..
  */
 void get_type(uint16_t e_type)
 {
@@ -182,7 +182,7 @@ void get_type(uint16_t e_type)
 		printf("CORE (Core file)");
 		break;
 	default:
-		printf("<unknown>: %x", e_type);
+		printf("<unknown: %x>", e_type);
 		break;
 	}
 	printf("\n");
@@ -190,7 +190,8 @@ void get_type(uint16_t e_type)
 
 /**
  * get_entry - Prints the virtual address from which the process will start.
- * @e_ident: The array of bytes passing as the identifier of the file.
+ * @data: The data encoding.
+ * @e_entry: The entry point address.
  */
 void get_entry(short data, unsigned int e_entry)
 {
