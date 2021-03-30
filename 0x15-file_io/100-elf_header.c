@@ -76,7 +76,7 @@ short get_data(unsigned char *e_ident)
 	switch (e_ident[EI_DATA])
 	{
 	case ELFDATANONE:
-		printf("none");
+		printf("Unknown data format");
 		data = 0;
 		break;
 	case ELFDATA2LSB:
@@ -159,12 +159,20 @@ void get_osabi(unsigned char *e_ident)
 
 /**
  * get_type - Prints the file type of the file.
- * @e_type: The object file type..
+ * @data: The data encoding.
+ * @e_type: The object file type.
  */
-void get_type(uint16_t e_type)
+void get_type(short data, uint16_t e_type)
 {
+	uint16_t type;
+
+	type = e_type;
+
+	if (data == ELFDATA2MSB)
+		type = type >> 8;
+
 	printf("  %-34s ", "Type:");
-	switch (e_type)
+	switch (type)
 	{
 	case ET_NONE:
 		printf("NONE (None)");
@@ -182,7 +190,7 @@ void get_type(uint16_t e_type)
 		printf("CORE (Core file)");
 		break;
 	default:
-		printf("<unknown: %x>", e_type);
+		printf("<unknown:> %x", e_type);
 		break;
 	}
 	printf("\n");
@@ -251,7 +259,7 @@ int main(int argc, char *argv[])
 	get_version(header->e_ident);
 	get_osabi(header->e_ident);
 	printf("  %-34s %d\n", "ABI Version:", header->e_ident[EI_ABIVERSION]);
-	get_type(header->e_type);
+	get_type(data, header->e_type);
 	get_entry(data, (unsigned int) header->e_entry);
 
 	free(header);
