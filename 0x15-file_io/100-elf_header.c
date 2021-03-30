@@ -45,7 +45,7 @@ void get_class(unsigned char *e_ident)
 	switch (e_ident[EI_CLASS])
 	{
 	case ELFCLASSNONE:
-		printf("none");
+		printf("This class is invalid");
 		break;
 	case ELFCLASS32:
 		printf("ELF32");
@@ -175,7 +175,7 @@ void get_type(short data, uint16_t e_type)
 	switch (type)
 	{
 	case ET_NONE:
-		printf("NONE (None)");
+		printf("NONE (Unknown type)");
 		break;
 	case ET_REL:
 		printf("REL (Relocatable file)");
@@ -190,7 +190,7 @@ void get_type(short data, uint16_t e_type)
 		printf("CORE (Core file)");
 		break;
 	default:
-		printf("<unknown:> %x", e_type);
+		printf("<unknown: %x>", e_type);
 		break;
 	}
 	printf("\n");
