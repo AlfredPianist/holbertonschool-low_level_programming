@@ -32,7 +32,11 @@ int f3(char *username, int pass_len)
  * @username: The username.
  * @pass_len: The length of the password.
  *
- * Description: Pending...
+ * Description: Selects the highest ASCII value of the username, operates
+ *              with it a bitwise xor, generates a seed for the rand
+ *              function and operates with it a bitwise & to generate the
+ *              position of the character in the array k for the fourth
+ *              character of the password.
  * Return: The position of the fourth character to be extracted in the initial
  *         array of characters.
  */
@@ -56,7 +60,10 @@ int f4(char *username, int pass_len)
  * @username: The username.
  * @pass_len: The length of the password.
  *
- * Description: Pending...
+ * Description: Sums and multiplies each of the ASCII values of the username
+ *              and operates with it a bitwise xor and & to generate the
+ *              position of the character in the array k for the fifth
+ *              character of the password.
  * Return: The position of the fifth character to be extracted in the initial
  *         array of characters.
  */
@@ -76,7 +83,11 @@ int f5(char *username, int pass_len)
  *      six-character password.
  * @username: The username.
  *
- * Description: Pending...
+ * Description: Generates i times a rand value until greater than the ASCII
+ *              value of the first character of the username, and operates
+ *              with it a bitwise xor and & to generate the position of the
+ *              character in the array k for the sixth character of the
+ *              password..
  * Return: The position of the sixth character to be extracted in the initial
  *         array of characters.
  */
@@ -104,7 +115,6 @@ int f6(char *username)
  *              crackme5. The first two functions are written here in the main
  *              function (betty reasons), and the rest of them are written
  *              above.
- *
  * Return: 0 (Always success).
  */
 int main(int argc, char *argv[])
@@ -135,7 +145,7 @@ int main(int argc, char *argv[])
 		res += username[i];
 	password[1] = k[(res ^ 0x4f) & 0x3f];
 
-	/* Functions 3 to 6 for characters 3 to 6 of the password */
+	/* Functions 3 to 6 for characters 3 to 6 of the password. */
 	password[2] = k[f3(username, pass_len)]; /* f3 */
 	password[3] = k[f4(username, pass_len)]; /* f4 */
 	password[4] = k[f5(username, pass_len)]; /* f5 */
