@@ -99,7 +99,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	unsigned long int hash;
 	shash_node_t *current;
 	char *new_node_key, *new_node_value;
-	short new_node_ok;
 
 	if (!ht || !key || !*key || !value)
 		return (0);
@@ -129,8 +128,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 
-	new_node_ok = shash_node_set(ht, new_node_key, new_node_value, hash);
-	if (!new_node_ok)
+	if (!shash_node_set(ht, new_node_key, new_node_value, hash))
 		return (0);
 	return (1);
 }
